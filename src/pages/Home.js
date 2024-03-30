@@ -31,7 +31,7 @@ function Home() {
         {/* Text */}
         <div className="lg:pl-10 lg:w-2/3  md:w-2/3 sm:w-full xs:text-center xs:text-justify ">
           <h1 className="text-4xl lg:text-6xl font-bold text-[#c28f33] mb-4">
-            Welcome to BizMathPro :
+            Welcome to BizMathPro : Muizzz
           </h1>
           <h1 className="text-4xl lg:text-3xl text-[#c28f33] mb-4 font-semibold">
             Your Gateway to Business Mathematics Excellence!
