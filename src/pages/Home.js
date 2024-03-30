@@ -26,7 +26,10 @@ function Home() {
         <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
+      <div
+        className="fixed inset-0 w-full h-full bg-transparent z-10 pointer-events-auto" // Ensure that clicks are intercepted
+        onClick={(e) => e.preventDefault()} // Prevent default behavior
+      ></div>
       <div className="hero relative flex flex-column items-center mt-6 z-10">
         {/* Text */}
         <div className="lg:pl-10 lg:w-2/3  md:w-2/3 sm:w-full xs:text-center xs:text-justify ">
@@ -42,11 +45,11 @@ function Home() {
             dynamic online platform tailored for students to master the
             intricate world where mathematics meets business.
           </p>
-          <button className="bg-[#2174ea] text-white font-bold mr-4 p-2 rounded w-1/4"> 
-              About
+          <button className="bg-[#2174ea] text-white font-bold mr-4 p-2 rounded w-1/4">
+            About
           </button>
           <button className="bg-[#334155] text-white font-bold p-2 rounded w-1/4">
-              Contact Us
+            Contact Us
           </button>
         </div>
         {/* Image */}
@@ -58,4 +61,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home;
