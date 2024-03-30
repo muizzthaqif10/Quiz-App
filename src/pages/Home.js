@@ -19,6 +19,7 @@ function Home() {
       <video
         autoPlay
         muted
+        controls={false}
         loop
         className="fixed inset-0 object-cover w-full h-full z-0"
       >
