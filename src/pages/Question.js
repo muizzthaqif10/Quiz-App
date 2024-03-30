@@ -27,7 +27,7 @@ function Question() {
   // const { setQuizState } = useContext(QuizContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/question/${quizId}`).then((response) => {
+    axios.get(`https://api-quiz-app.onrender.com/question/${quizId}`).then((response) => {
       setListOfQuestions(response.data);
       console.log("RRRR", response.data);
     });
@@ -86,7 +86,7 @@ function Question() {
 
     const requests = [];
     const bulkSubmissionRequest = axios.post(
-      "http://localhost:3001/answer/bulk",
+      "https://api-quiz-app.onrender.com/answer/bulk",
       answers
     );
     requests.push(bulkSubmissionRequest);
@@ -97,7 +97,7 @@ function Question() {
 
       // Wait for bulkSubmissionRequest to finish before updating the score
       const updateScoreRequest = await axios.put(
-        `http://localhost:3001/attempt/updateScore/${attemptId}`
+        `https://api-quiz-app.onrender.com/attempt/updateScore/${attemptId}`
       );
       console.log("Update score success:", updateScoreRequest.data);
 
@@ -114,7 +114,7 @@ function Question() {
   const getScore = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/attempt/${attemptId}`
+        `https://api-quiz-app.onrender.com/attempt/${attemptId}`
       );
       console.log(response.data);
       setAttemptData(response.data);

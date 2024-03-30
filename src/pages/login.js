@@ -18,7 +18,7 @@ function Login() {
       password: password,
     };
 
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+    axios.post("https://api-quiz-app.onrender.com/auth/login", data).then((response) => {
       console.log(response.data);
       if (response.data.error) {
         alert(response.data.error);

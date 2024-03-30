@@ -19,14 +19,14 @@ function Quiz() {
   const { id } = authState;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/quiz").then((response) => {
+    axios.get("https://api-quiz-app.onrender.com/quiz").then((response) => {
       setListOfQuiz(response.data);
     });
   }, []);
 
   const startAttempt = (quizId) => {
     axios
-      .get(`http://localhost:3001/attempt/${id}/${quizId}`)
+      .get(`https://api-quiz-app.onrender.com/attempt/${id}/${quizId}`)
       .then((response) => {
         console.log(response.data.length);
         const attemptLength = response.data.length; // Store the attempt length in a variable
@@ -39,7 +39,7 @@ function Quiz() {
           attemptedAt: "2024-03-30T08:00:00Z",
         };
 
-        //   axios.post("http://localhost:3001/attempt", data).then((response) => {
+        //   axios.post("https://api-quiz-app.onrender.com/attempt", data).then((response) => {
         //     console.log(response);
         //  navigate(/quiz/${quizId}?attemptLength=${attemptLength + 1}); // Pass the attempt length directly to navigate
         //   });

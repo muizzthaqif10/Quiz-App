@@ -19,7 +19,7 @@ function Register() {
       password: password,
     };
 
-    axios.post("http://localhost:3001/auth", data).then((response) => {
+    axios.post("https://api-quiz-app.onrender.com/auth", data).then((response) => {
       console.log(response.data);
       if (response.data.error) {
         alert(response.data.error);

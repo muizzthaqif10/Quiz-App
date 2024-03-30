@@ -21,7 +21,7 @@ function QuizInfo() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/quiz/byId/${quizId}`)
+      .get(`https://api-quiz-app.onrender.com/quiz/byId/${quizId}`)
       .then((response) => {
         setQuizInfo(response.data);
         // Assuming you have quizId from quizInfo or elsewhere
@@ -29,7 +29,7 @@ function QuizInfo() {
         // Fetch attempt using quizId and userId
         console.log(response.data);
         axios
-          .get(`http://localhost:3001/attempt/${id}/${quizId}`)
+          .get(`https://api-quiz-app.onrender.com/attempt/${id}/${quizId}`)
           .then((response) => {
             console.log("",response.data);
             setAttemptUser(response.data);
@@ -45,7 +45,7 @@ function QuizInfo() {
 
   const startAttempt = (quizId) => {
     axios
-      .get(`http://localhost:3001/attempt/${id}/${quizId}`)
+      .get(`https://api-quiz-app.onrender.com/attempt/${id}/${quizId}`)
       .then((response) => {
         console.log("xxx", response.data);
         const attemptLength = response.data.length; // Store the attempt length in a variable
@@ -58,7 +58,7 @@ function QuizInfo() {
           attemptedAt: new Date().toISOString(),
         };
 
-        axios.post("http://localhost:3001/attempt", data).then((response) => {
+        axios.post("https://api-quiz-app.onrender.com/attempt", data).then((response) => {
           console.log(response);
           navigate(
             `/quiz/${quizId}?attemptLength=${attemptLength + 1}&attemptId=${

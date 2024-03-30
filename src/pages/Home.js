@@ -7,11 +7,11 @@ function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
   //   let history = useNavigate();
 
-  useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
-      setListOfPosts(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("https://api-quiz-app.onrender.com/posts").then((response) => {
+  //     setListOfPosts(response.data);
+  //   });
+  // }, []);
 
   return (
     <main className="flex bg-black min-h-screen flex-col items-center gap-2 p-8 sm:p-24">
