@@ -39,7 +39,9 @@ function Login() {
         <video
           autoPlay
           muted
+          controls={false}
           loop
+          playsInline
           className="fixed inset-0 object-cover w-full h-full z-0"
         >
           <source src="/video.mp4" type="video/mp4" />
@@ -131,4 +133,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login;

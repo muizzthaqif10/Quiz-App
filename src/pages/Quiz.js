@@ -70,7 +70,9 @@ function Quiz() {
         <video
           autoPlay
           muted
+          controls={false}
           loop
+          playsInline
           className="fixed inset-0 object-cover w-full h-full z-0"
         >
           <source src="/video.mp4" type="video/mp4" />
@@ -90,7 +92,9 @@ function Quiz() {
                   className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
                 ></img>
                 <div className="text-2xl font-bold">{value.title}</div>
-                <div className="text-md font-thin text-center">{value.description}</div>
+                <div className="text-md font-thin text-center">
+                  {value.description}
+                </div>
               </div>
             ))}
           </div>
@@ -108,7 +112,9 @@ function Quiz() {
                   className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
                 ></img>
                 <div className="text-2xl font-bold">{value.title}</div>
-                <div className="text-md font-thin text-center">{value.description}</div>
+                <div className="text-md font-thin text-center">
+                  {value.description}
+                </div>
               </div>
             ))}
           </div>
@@ -145,4 +151,4 @@ function Quiz() {
   );
 }
 
-export default Quiz;
+export default Quiz;

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function About() {
   return (
-    <main className="flex bg-black min-h-screen flex-col bg-yellow-100 sm:p-24">
+    <main className="flex bg-black min-h-screen flex-col sm:p-24">
       {/* Video Background */}
       <video
         autoPlay

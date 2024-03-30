@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-import { QuizContext } from "../helpers/QuizContext";
+// import { QuizContext } from "../helpers/QuizContext";
 
 function Question() {
   const [listOfQuestions, setListOfQuestions] = useState([]);
@@ -12,7 +12,7 @@ function Question() {
   const navigate = useNavigate();
   let { quizId } = useParams();
   const location = useLocation();
-  const [remainingTime, setRemainingTime] = useState(10); // 5 minutes timer
+  const [remainingTime, setRemainingTime] = useState(930); // 5 minutes timer
   const [isLoading, setIsLoading] = useState(false);
   const [timer, setTimer] = useState(null); // Store timer reference
   const { authState } = useContext(AuthContext);
