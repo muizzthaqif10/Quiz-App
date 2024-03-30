@@ -10,7 +10,9 @@ function About() {
       <video
         autoPlay
         muted
+        controls={false}
         loop
+        playsInline
         className="fixed inset-0 object-cover w-full h-full z-0"
       >
         <source src="/video.mp4" type="video/mp4" />
