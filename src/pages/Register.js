@@ -1,39 +1,65 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FidgetSpinner } from "react-loader-spinner";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-
+  const [loading, setLoading] = useState(false); // State variable for loading
 
   const navigate = useNavigate();
 
   const register = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-
+  
+    // Check if any of the fields are empty
+    if (!username || !email || !password) {
+      alert("Please fill out all the fields.");
+      return; // Exit the function early if any field is empty
+    }
+  
     const data = {
       username: username,
       email: email,
       password: password,
     };
-
-    axios.post("https://api-quiz-app.onrender.com/auth", data).then((response) => {
-      console.log(response.data);
-      if (response.data.error) {
-        alert(response.data.error);
-      } else {
-        alert("Success register")
-        navigate("/login");
-      }
-    });
+  
+    axios.post("https://api-quiz-app.onrender.com/auth", data)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          alert("Success register")
+          navigate("/login");
+        }
+      });
   };
+  
+
   return (
     <>
-      <main>
+      <div>
+        {loading && (
+          <div className="absolute inset-0 h-full bg-black bg-opacity-75 z-50 flex gap-4 flex-col justify-center items-center">
+            <FidgetSpinner
+              visible={true}
+              height={80}
+              backgroundColor="#c28f33"
+              width={80}
+              ariaLabel="fidget-spinner-loading"
+              wrapperStyle={{}}
+              wrapperClass="fidget-spinner-wrapper"
+            />
+            <p className="text-white  text-xl">Please wait ..</p>
+          </div>
+        )}
         <section className="flex-column justify-center items-center ">
-          <h1 className="relative z-10 text-center text-orange-200 font-bold text-4xl my-10">Registration Form</h1>
+          <h1 className="relative z-10 text-center text-orange-200 font-bold text-4xl my-10">
+            Registration Form
+          </h1>
 
           <div className="container relative z-10 mx-auto min-h-screen ">
             <div className="flex justify-center">
@@ -114,8 +140,12 @@ function Register() {
                   </div>
 
                   <div className="flex items-center justify-center gap-4 font-bold text-xl">
-                  <button onClick={register} className="bg-white text-black p-2 rounded-full w-1/2">Register</button>
-
+                    <button
+                      onClick={register}
+                      className="bg-white text-black p-2 rounded-full w-1/2"
+                    >
+                      Register
+                    </button>
                   </div>
                 </form>
               </div>
@@ -123,20 +153,20 @@ function Register() {
           </div>
 
           <video
-          autoPlay
-          muted
-          controls={false}
-          loop
-          playsInline
-          className="fixed inset-0 object-cover w-full h-full z-0"
-        >
-          <source src="/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+            autoPlay
+            muted
+            controls={false}
+            loop
+            playsInline
+            className="fixed inset-0 object-cover w-full h-full z-0"
+          >
+            <source src="/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </section>
-      </main>
+      </div>
     </>
   );
 }
 
-export default Register;
+export default Register;

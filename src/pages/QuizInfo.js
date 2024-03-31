@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import { FidgetSpinner } from "react-loader-spinner";
 
 function QuizInfo() {
   const [quizInfo, setQuizInfo] = useState();
@@ -11,6 +12,9 @@ function QuizInfo() {
   const navigate = useNavigate();
   const [attemptUser, setAttemptUser] = useState();
   const { authState } = useContext(AuthContext);
+
+  const [loading, setLoading] = useState(true); // State variable for loading
+
   // const [quizState, setQuizState] = useState({
   //   id: 0,
   //   status: false,
@@ -27,12 +31,14 @@ function QuizInfo() {
         // Assuming you have quizId from quizInfo or elsewhere
         // const quizId = response.data.id; // Get quizId from response data
         // Fetch attempt using quizId and userId
+
         console.log(response.data);
         axios
           .get(`https://api-quiz-app.onrender.com/attempt/${id}/${quizId}`)
           .then((response) => {
-            console.log("",response.data);
+            console.log("", response.data);
             setAttemptUser(response.data);
+            setLoading(false); // Set loading to false when data is fetched
           })
           .catch((error) => {
             console.error("Error fetching attempt:", error);
@@ -58,14 +64,16 @@ function QuizInfo() {
           attemptedAt: new Date().toISOString(),
         };
 
-        axios.post("https://api-quiz-app.onrender.com/attempt", data).then((response) => {
-          console.log(response);
-          navigate(
-            `/quiz/${quizId}?attemptLength=${attemptLength + 1}&attemptId=${
-              response.data.id
-            }`
-          ); // Pass the attempt length directly to navigate
-        });
+        axios
+          .post("https://api-quiz-app.onrender.com/attempt", data)
+          .then((response) => {
+            console.log(response);
+            navigate(
+              `/quiz/${quizId}?attemptLength=${attemptLength + 1}&attemptId=${
+                response.data.id
+              }`
+            ); // Pass the attempt length directly to navigate
+          });
       });
   };
 
@@ -85,7 +93,21 @@ function QuizInfo() {
   };
 
   return (
-    <div>
+    <div className="">
+      {loading && (
+        <div className="absolute inset-0 h-full bg-black bg-opacity-75 z-50 flex gap-4 flex-col justify-center items-center">
+          <FidgetSpinner
+            visible={true}
+            height={80}
+            backgroundColor="#c28f33"
+            width={80}
+            ariaLabel="fidget-spinner-loading"
+            wrapperStyle={{}}
+            wrapperClass="fidget-spinner-wrapper"
+          />
+          <p className="text-white  text-xl">Please wait ..</p>
+        </div>
+      )}
       {/* <QuizContext.Provider value={(quizState, setQuizState)}> */}
       <div className="w-full bg-black min-h-screen p-8 sm:p-24">
         {/* Video Background */}
@@ -100,8 +122,8 @@ function QuizInfo() {
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
-        {quizInfo && (
+        
+        {quizInfo && !loading && (
           <div className="relative z-10">
             <p className="text-3xl text-white text-center font-bold tracking-wider mb-[2rem]">
               {quizInfo.title}

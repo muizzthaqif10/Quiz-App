@@ -2,39 +2,67 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import { FidgetSpinner } from "react-loader-spinner";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false); // State variable for loading
 
   const navigate = useNavigate();
 
   const login = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
 
+    // Set loading state to true when login button is clicked
+    setLoading(true);
+
     const data = {
       email: email,
       password: password,
     };
 
-    axios.post("https://api-quiz-app.onrender.com/auth/login", data).then((response) => {
-      console.log(response.data);
-      if (response.data.error) {
-        alert(response.data.error);
-      } else {
-        localStorage.setItem("accessToken", response.data.token);
-        setAuthState({
-          username: response.data.username,
-          id: response.data.id,
-          status: true,
-        });
-        navigate("/");
-      }
-    });
+    axios
+      .post("https://api-quiz-app.onrender.com/auth/login", data)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.error) {
+          alert(response.data.error);
+          setLoading(false); // Set loading to false on error
+        } else {
+          localStorage.setItem("accessToken", response.data.token);
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.error("Error logging in:", error);
+        // Set loading to false on error
+        setLoading(false);
+      });
   };
+
   return (
     <>
+      {loading && (
+        <div className="absolute inset-0 h-full bg-black bg-opacity-75 z-50 flex gap-4 flex-col justify-center items-center">
+          <FidgetSpinner
+            visible={true}
+            height={80}
+            backgroundColor="#c28f33"
+            width={80}
+            ariaLabel="fidget-spinner-loading"
+            wrapperStyle={{}}
+            wrapperClass="fidget-spinner-wrapper"
+          />
+          <p className="text-white  text-xl">Please wait ..</p>
+        </div>
+      )}
       <main className="flex-column justify-center items-center ">
         <video
           autoPlay
