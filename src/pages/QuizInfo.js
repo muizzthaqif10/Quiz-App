@@ -122,13 +122,13 @@ function QuizInfo() {
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
+
         {quizInfo && !loading && (
           <div className="relative z-10">
             <p className="text-3xl text-white text-center font-bold tracking-wider mb-[2rem]">
               {quizInfo.title}
             </p>
-            <div className="grid w-full lg:grid-cols-2 text-white gap-[3rem] h-full ">
+            <div className="grid w-full lg:grid-cols-2 justify-center items-center text-white gap-[3rem] h-full ">
               {/* Text */}
 
               <div className="z-10">
@@ -359,51 +359,65 @@ function QuizInfo() {
                   Start Quiz 1
                 </button> */}
               </div>
-              <div className="z-10">
-                {/* <p className="text-3xl font-bold tracking-wider mb-[2rem]">
-                  {quizInfo.title}
-                </p> */}
-                {/* <p>{quizInfo.description}</p> */}
-
-                <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                  <div className="flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33] p-4">
-                    <div className="flex flex-col items-center gap-4">
-                      <img src="/bxs-crown.svg" className="w-[4rem]"></img>
-                      <p className="w-full text-2xl font-bold text-center border-b-2 pb-[1rem]">
-                        Dashboard
-                      </p>
-                      {attemptUser &&
-                        attemptUser.map((attempt, index) => (
-                          <div key={index} className=" flex gap-[6rem] ">
-                            <p className="text-xl p-2">Attempt {index + 1}</p>
-                            <p className="text-xl bg-white p-2 text-black rounded">
-                              Score: {attempt.score}
-                            </p>
-                          </div>
-                        ))}
-                      {attemptUser && attemptUser.length >= 3 ? (
-                        <button
-                          onClick={() => navigate(`/answer/${quizId}`)}
-                          className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
-                        >
-                          See Answer
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => handleConfirmAttempt(quizInfo.id)}
-                          className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
-                        >
-                          Start Quiz
-                        </button>
-                      )}
+              {authState.status ? (
+                <div className="z-10">
+                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
+                    <div className="flex justify-center items-center gap-4 bg-black bg-opacity-75 rounded-lg border-2 border-[#c28f33] p-4">
+                      <div className="flex flex-col items-center gap-4">
+                        <img src="/bxs-crown.svg" className="w-[4rem]"></img>
+                        <p className="w-full text-2xl font-bold text-center border-b-2 pb-[1rem]">
+                          Dashboard
+                        </p>
+                        {attemptUser &&
+                          attemptUser.map((attempt, index) => (
+                            <div key={index} className=" flex gap-[6rem] ">
+                              <p className="text-xl p-2">Attempt {index + 1}</p>
+                              <p className="text-xl bg-white p-2 text-black rounded">
+                                Score: {attempt.score}
+                              </p>
+                            </div>
+                          ))}
+                        {attemptUser && attemptUser.length >= 3 ? (
+                          <button
+                            onClick={() => navigate(`/answer/${quizId}`)}
+                            className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
+                          >
+                            See Answer
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleConfirmAttempt(quizInfo.id)}
+                            className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
+                          >
+                            Start Quiz
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
+              ) : (
+                <div className="z-10">
+                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
+                    <div className="flex justify-center items-center gap-4 bg-black bg-opacity-75 rounded-lg border-2 border-[#c28f33] p-4">
+                      <div className="flex flex-col items-center gap-4">
+                        <img src="/bxs-crown.svg" className="w-[4rem]"></img>
+                        <p className="w-full text-2xl font-bold text-center border-b-2 pb-[1rem]">
+                          Dashboard
+                        </p>
 
-                {/* <button onClick={() => handleConfirmAttempt(quizInfo.id)}>
-                  Start Quiz 1
-                </button> */}
-              </div>
+                        <button
+                          onClick={() => navigate("/login")}
+                          className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
+                        >
+                          Please Login first
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* {quizInfo.id === 1 && (
                 <Slider
                 dots

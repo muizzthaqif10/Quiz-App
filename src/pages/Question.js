@@ -200,11 +200,12 @@ function Question() {
               )}
               <div className=" grid grid-cols-2  gap-[1rem] z-10">
                 {listOfQuestions.map((question, questionIndex) => (
+                  
                   <div
                     className={`text-black shadow-lg shadow-black rounded-lg border-2 p-4 transition-all ease-in-out duration-500 bg-white  ${
                       selectedAnswers.hasOwnProperty(question.id)
                         ? "bg-green-400"
-                        : "bg-black"
+                        : ""
                     }`}
                     key={questionIndex}
                   >
