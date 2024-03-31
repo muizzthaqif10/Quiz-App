@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import { FidgetSpinner } from "react-loader-spinner";
+
 // import { QuizContext } from "../helpers/QuizContext";
 
 function Question() {
@@ -12,8 +14,8 @@ function Question() {
   const navigate = useNavigate();
   let { quizId } = useParams();
   const location = useLocation();
+  const [loading, setLoading] = useState(true); // State variable for loading
   const [remainingTime, setRemainingTime] = useState(930); // 5 minutes timer
-  const [isLoading, setIsLoading] = useState(false);
   const [timer, setTimer] = useState(null); // Store timer reference
   const { authState } = useContext(AuthContext);
   const [modalMessage, setModalMessage] = useState("");
@@ -30,6 +32,12 @@ function Question() {
     axios.get(`https://api-quiz-app.onrender.com/question/${quizId}`).then((response) => {
       setListOfQuestions(response.data);
       console.log("RRRR", response.data);
+      setLoading(false); // Set loading to false when data is fetched
+
+    }).catch((error) =>{
+      console.log(error);
+      setLoading(false); // Set loading to false when data is fetched
+
     });
   }, [quizId]);
 
@@ -74,7 +82,7 @@ function Question() {
     //   return; // Prevent further execution
     // }
 
-    setIsLoading(true);
+    setLoading(true);
     const answers = Object.entries(selectedAnswers).map(
       ([questionId, choice]) => ({
         attemptId: attemptId,
@@ -107,7 +115,7 @@ function Question() {
     } catch (error) {
       console.error("Error in bulk submission or score update:", error);
     } finally {
-      setIsLoading(false); // Set loading state to false after submission
+      setLoading(false); // Set loading state to false after submission
     }
   };
 
@@ -130,7 +138,22 @@ function Question() {
   };
 
   return (
-    <main className="flex bg-black min-h-screen p-8 sm:p-24">
+    <div>
+      {loading && (
+        <div className="absolute inset-0 h-full bg-black bg-opacity-75 z-50 flex gap-4 flex-col justify-center items-center">
+          <FidgetSpinner
+            visible={true}
+            height={80}
+            backgroundColor="#c28f33"
+            width={80}
+            ariaLabel="fidget-spinner-loading"
+            wrapperStyle={{}}
+            wrapperClass="fidget-spinner-wrapper"
+          />
+          <p className="text-white  text-xl">Please wait ..</p>
+        </div>
+      )}
+    <div className="flex bg-black min-h-screen p-8 sm:p-24">
       <video
           autoPlay
           muted
@@ -237,7 +260,7 @@ function Question() {
             <button
               className="hover:text-white text-black font-semibold hover:bg-blue-900 transition ease-in-out duration-300 bg-blue-400 rounded-lg shadow-md py-2 px-[1rem]"
               onClick={submitAnswers}
-              disabled={isLoading}
+              disabled={loading}
             >
               Submit
             </button>
@@ -248,7 +271,7 @@ function Question() {
             <button
               className="hover:text-white text-black font-semibold hover:bg-blue-900 transition ease-in-out duration-300 bg-blue-400 rounded-lg shadow-md py-2 px-[1rem]"
               onClick={notComplete}
-              disabled={isLoading}
+              disabled={loading}
             >
               Submit
             </button>
@@ -295,7 +318,8 @@ function Question() {
           </div>
         )}
       </div>
-    </main>
+    </div>
+    </div>
   );
 }
 

@@ -1,27 +1,30 @@
 import React, { useEffect, useState, useContext } from "react";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-// import { QuizContext } from "../helpers/QuizContext";
+import { FidgetSpinner } from "react-loader-spinner";
 
 function Quiz() {
   const [listOfQuiz, setListOfQuiz] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [attemptByUser, setAttemptByUser] = useState();
+  const [loading, setLoading] = useState(true); // State variable for loading
   const navigate = useNavigate();
   const { authState } = useContext(AuthContext);
-  // const [quizState, setQuizState] = useState({
-  //   id: 0,
-  //   status: false,
-  // });
   const [quizIdToNavigate, setQuizIdToNavigate] = useState(null);
   const { id } = authState;
 
   useEffect(() => {
-    axios.get("https://api-quiz-app.onrender.com/quiz").then((response) => {
-      setListOfQuiz(response.data);
-    });
+    axios
+      .get("https://api-quiz-app.onrender.com/quiz")
+      .then((response) => {
+        setListOfQuiz(response.data);
+        setLoading(false); // Set loading to false when data is fetched
+      })
+      .catch((error) => {
+        console.error("Error fetching quiz data:", error);
+        setLoading(false); // Set loading to false on error as well
+      });
   }, []);
 
   const startAttempt = (quizId) => {
@@ -29,20 +32,14 @@ function Quiz() {
       .get(`https://api-quiz-app.onrender.com/attempt/${id}/${quizId}`)
       .then((response) => {
         console.log(response.data.length);
-        const attemptLength = response.data.length; // Store the attempt length in a variable
-        setAttemptByUser(attemptLength); // Update the state variable
-
+        const attemptLength = response.data.length;
+        setAttemptByUser(attemptLength);
         const data = {
           userId: id,
           quizId: quizId,
           score: 85,
           attemptedAt: "2024-03-30T08:00:00Z",
         };
-
-        //   axios.post("https://api-quiz-app.onrender.com/attempt", data).then((response) => {
-        //     console.log(response);
-        //  navigate(/quiz/${quizId}?attemptLength=${attemptLength + 1}); // Pass the attempt length directly to navigate
-        //   });
         navigate(`/quiz/${quizId}`);
       });
   };
@@ -63,8 +60,22 @@ function Quiz() {
   };
 
   return (
-    <div>
-      {/* <QuizContext.Provider value={(quizState, setQuizState)}> */}
+    <div className="">
+      {loading && (
+        <div className="absolute inset-0 h-full bg-black bg-opacity-75 z-50 flex gap-4 flex-col justify-center items-center">
+          <FidgetSpinner
+            visible={true}
+            height={80}
+            backgroundColor="#c28f33"
+            width={80}
+            ariaLabel="fidget-spinner-loading"
+            wrapperStyle={{}}
+            wrapperClass="fidget-spinner-wrapper"
+          />
+          <p className="text-white  text-xl">Please wait ..</p>
+        </div>
+      )}
+
       <div className="flex bg-black min-h-screen p-8 sm:p-24">
         {/* Video Background */}
         <video
@@ -78,46 +89,50 @@ function Quiz() {
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="flex flex-col w-full gap-[3rem]">
-          <div className="flex flex-col lg:flex-row gap-[2rem] w-full h-full z-10">
-            {/* Text */}
-            {listOfQuiz.slice(0, 3).map((value, key) => (
-              <div
-                key={key}
-                className="w-full lg:w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
-                onClick={() => navigate(`/quiz/info/${value.id}`)}
-              >
-                <img
-                  src="./bx-math.svg"
-                  className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
-                ></img>
-                <div className="text-2xl font-bold">{value.title}</div>
-                <div className="text-md font-thin text-center">
-                  {value.description}
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Nested grid for items 4 and 5 */}
-          <div className="flex justify-center gap-[2rem] w-full h-full z-10">
-            {listOfQuiz.slice(3).map((value, key) => (
-              <div
-                key={key}
-                className="w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
-                onClick={() => navigate(`/quiz/info/${value.id}`)}
-              >
-                <img
-                  src="./bx-math.svg"
-                  className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
-                ></img>
-                <div className="text-2xl font-bold">{value.title}</div>
-                <div className="text-md font-thin text-center">
-                  {value.description}
-                </div>
+        <div className="flex flex-col w-full gap-[3rem] z-10">
+          {!loading && ( // Render quiz content when loading is false
+            <>
+              <div className="flex flex-col lg:flex-row gap-[2rem] w-full h-full z-10">
+                {/* Text */}
+                {listOfQuiz.slice(0, 3).map((value, key) => (
+                  <div
+                    key={key}
+                    className="w-full lg:w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
+                    onClick={() => navigate(`/quiz/info/${value.id}`)}
+                  >
+                    <img
+                      src="./bx-math.svg"
+                      className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
+                    ></img>
+                    <div className="text-2xl font-bold">{value.title}</div>
+                    <div className="text-md font-thin text-center">
+                      {value.description}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+              {/* Nested grid for items 4 and 5 */}
+              <div className="flex justify-center gap-[2rem] w-full h-full z-10">
+                {listOfQuiz.slice(3).map((value, key) => (
+                  <div
+                    key={key}
+                    className="w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
+                    onClick={() => navigate(`/quiz/info/${value.id}`)}
+                  >
+                    <img
+                      src="./bx-math.svg"
+                      className="w-[5rem] h-[5rem] mt-[1rem] p-4 bg-[#c28f33] rounded-full"
+                    ></img>
+                    <div className="text-2xl font-bold">{value.title}</div>
+                    <div className="text-md font-thin text-center">
+                      {value.description}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Modal */}
@@ -146,7 +161,6 @@ function Quiz() {
         )}
         {/* Image */}
       </div>
-      {/* </QuizContext.Provider> */}
     </div>
   );
 }
