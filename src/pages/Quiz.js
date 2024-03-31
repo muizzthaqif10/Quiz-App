@@ -79,12 +79,12 @@ function Quiz() {
           Your browser does not support the video tag.
         </video>
         <div className="flex flex-col w-full gap-[3rem]">
-          <div className="flex gap-[2rem] w-full h-full z-10">
+          <div className="flex flex-col lg:flex-row gap-[2rem] w-full h-full z-10">
             {/* Text */}
             {listOfQuiz.slice(0, 3).map((value, key) => (
               <div
                 key={key}
-                className="w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
+                className="w-full lg:w-1/3 sm:w-full flex flex-col gap-[2rem] items-center bg-zinc-800 bg-opacity-70 text-white border-2  p-6 border-[#c28f33] cursor-pointer hover:bg-orange-400 hover:bg-opacity-70  transition duration-300 ease-in-out hover:scale-105"
                 onClick={() => navigate(`/quiz/info/${value.id}`)}
               >
                 <img

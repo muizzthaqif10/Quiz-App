@@ -132,14 +132,16 @@ function Question() {
   return (
     <main className="flex bg-black min-h-screen p-8 sm:p-24">
       <video
-        autoPlay
-        muted
-        loop
-        className="fixed inset-0 object-cover w-full h-full z-0"
-      >
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+          autoPlay
+          muted
+          controls={false}
+          loop
+          playsInline
+          className="fixed inset-0 object-cover w-full h-full z-0"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       <div className="relative p-[2rem] bg-zinc-800 bg-opacity-70 border-2 border-[#c28f33] rounded-lg w-2/3 mx-auto">
         <div className="fixed top-0 left-4 right-4 bg-black z-20">
           {!isAnswerRoute && (

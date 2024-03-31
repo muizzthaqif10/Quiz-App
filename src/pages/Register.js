@@ -123,14 +123,16 @@ function Register() {
           </div>
 
           <video
-            autoPlay
-            muted
-            loop
-            className="fixed inset-0 object-cover w-full h-full z-0"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          autoPlay
+          muted
+          controls={false}
+          loop
+          playsInline
+          className="fixed inset-0 object-cover w-full h-full z-0"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         </section>
       </main>
     </>
