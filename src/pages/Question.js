@@ -153,7 +153,7 @@ function Question() {
           <p className="text-white  text-xl">Please wait ..</p>
         </div>
       )}
-      <div className="flex bg-black min-h-screen p-8 sm:p-24">
+      <div className="flex bg-black min-h-screen p-8 ">
         <video
           autoPlay
           muted
@@ -167,7 +167,7 @@ function Question() {
         </video>
         {!loading && (
           <>
-            <div className="relative p-[2rem] bg-zinc-800 bg-opacity-70 border-2 border-[#c28f33] rounded-lg w-2/3 mx-auto">
+            <div className="relative p-[2rem] bg-zinc-800 bg-opacity-70 border-2 border-[#c28f33] rounded-lg w-full lg:w-2/3 mx-auto">
               <div className="fixed top-0  left-0 right-0 bg-[#000000] z-20">
                 {!isAnswerRoute && (
                   <div className="flex w-full justify-center items-center p-4 gap-4 ">
@@ -198,7 +198,7 @@ function Question() {
                   Answer Set Question {quizId}
                 </p>
               )}
-              <div className=" grid grid-cols-2  gap-[1rem] z-10">
+              <div className=" md:grid md:grid-cols-2 grid grid-cols-1  gap-[1rem] z-10">
                 {listOfQuestions.map((question, questionIndex) => (
                   
                   <div

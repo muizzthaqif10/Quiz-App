@@ -113,7 +113,7 @@ function Quiz() {
                 ))}
               </div>
               {/* Nested grid for items 4 and 5 */}
-              <div className="flex justify-center gap-[2rem] w-full h-full z-10">
+              <div className="flex flex-col lg:flex-row justify-center gap-[2rem] w-full h-full z-10">
                 {listOfQuiz.slice(3).map((value, key) => (
                   <div
                     key={key}

@@ -60,7 +60,7 @@ function About() {
           <div className="flex justify-center w-full items-center gap-8 p-2">
             <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-lg w-[12rem] h-[12rem] object-fill mb-[2.4rem]"
+                className="rounded-lg w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
                 src="./sv.jpg"
               ></img>
               <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
