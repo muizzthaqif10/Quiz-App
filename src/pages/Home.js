@@ -43,12 +43,12 @@ function Home() {
             dynamic online platform tailored for students to master the
             intricate world where mathematics meets business.
           </p>
-          <button className="bg-[#2174ea] text-white font-bold mr-4 p-2 rounded w-1/4">
+          {/* <button className="bg-[#2174ea] text-white font-bold mr-4 p-2 rounded w-1/4">
             About
           </button>
           <button className="bg-[#334155] text-white font-bold p-2 rounded w-1/4">
             Contact Us
-          </button>
+          </button> */}
         </div>
         {/* Image */}
       </div>

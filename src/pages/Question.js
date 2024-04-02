@@ -15,7 +15,7 @@ function Question() {
   let { quizId } = useParams();
   const location = useLocation();
   const [loading, setLoading] = useState(true); // State variable for loading
-  const [remainingTime, setRemainingTime] = useState(930); // 5 minutes timer
+  const [remainingTime, setRemainingTime] = useState(900); // 5 minutes timer
   const [timer, setTimer] = useState(null); // Store timer reference
   const { authState } = useContext(AuthContext);
   const [modalMessage, setModalMessage] = useState("");
