@@ -41,8 +41,37 @@ function About() {
             curiosity and showcase the playful side of mathematics.
           </p>
         </div>
-
         <div className=" rounded-lg">
+          <div className="flex gap-6 justify-center items-center text-2xl font-bold text-white mb-[2rem]">
+            {/* <img
+              className="w-[4rem] bg-black rounded-full p-2"
+              src="/bxs-graduation.svg"
+              alt="Icon"
+            /> */}
+            <span className="bg-zinc-900 p-2 rounded-t-full rounded-br-full border-2 border-[#c28f33]">
+              Supervisor
+            </span>
+            {/* <img
+              className="w-[4rem] bg-black rounded-full p-2"
+              src="/bxs-graduation.svg"
+              alt="Icon"
+            /> */}
+          </div>
+          <div className="flex justify-center w-full items-center gap-8 p-2">
+            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
+              <img
+                className="border rounded-lg w-[12rem] h-[12rem] object-fill mb-[2.4rem]"
+                src="./sv.jpg"
+              ></img>
+              <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
+                Siti Mahanum Binti Shaik  Ismail
+              </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4">
           <div className="flex gap-6 justify-center items-center text-2xl font-bold text-white mb-[2rem]">
             {/* <img
               className="w-[4rem] bg-black rounded-full p-2"
@@ -61,7 +90,7 @@ function About() {
           <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-2">
             <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem] object-cover mb-[2.4rem]"
+                className="border rounded-full w-[7rem] h-[7rem]  mb-[2.4rem]"
                 src="./user2.jpg"
               ></img>
               <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
@@ -74,7 +103,7 @@ function About() {
 
             <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem] object-cover mb-[2.4rem]"
+                className="border rounded-full w-[7rem] h-[7rem]  mb-[2.4rem]"
                 src="./user3.jpg"
               ></img>
               <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
@@ -88,7 +117,7 @@ function About() {
 
             <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem] object-cover mb-[2.4rem]"
+                className="border rounded-full w-[7rem] h-[7rem] mb-[2.4rem]"
                 src="./user1.jpg"
               ></img>
               <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
