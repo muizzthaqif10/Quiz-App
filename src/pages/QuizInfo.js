@@ -137,7 +137,7 @@ function QuizInfo() {
                 {quizInfo.id === 1 && (
                   <div className="w-full flex flex-col gap-4 mt-[4rem]">
                     <div className="flex flex-col gap-4">
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -145,7 +145,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Adding integers is straightforward and involves
                             combining values to find their sum. When we add
                             integers, we are essentially "combining" or
@@ -154,7 +154,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -162,7 +162,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Subtracting integers is very similar to adding
                             integers. This is because when we subtract integers,
                             we will "add the opposite".
@@ -203,7 +203,7 @@ function QuizInfo() {
                 {quizInfo.id === 2 && (
                   <div className="w-full flex flex-col gap-4 mt-[4rem]">
                     <div className="flex flex-col gap-4">
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2  flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -211,7 +211,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Multiplication of integers is like combining groups
                             of numbers. If multiplying two positive numbers or
                             two negative numbers together, get a positive
@@ -221,7 +221,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -229,7 +229,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Division of integers is like sharing or splitting
                             numbers into equal groups. When you divide two
                             positive or two negative numbers, you get a positive
@@ -267,7 +267,7 @@ function QuizInfo() {
                 {quizInfo.id === 3 && (
                   <div className="w-full flex flex-col gap-4 mt-[4rem]">
                     <div className="flex flex-col gap-4">
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -275,7 +275,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Adding and subtracting fractions means finding the
                             sum or the difference of two or more fractions. In
                             order to do this, the fractions must have a common
@@ -287,7 +287,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -295,7 +295,7 @@ function QuizInfo() {
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
 
                         <div className="flex  flex-col gap-4">
-                          <p className="text-lg font-thin ">
+                          <p className="text-lg font-thin text-justify">
                             Multiplying and dividing fractions means using
                             multiplication and division to calculate with
                             fractions. Fraction multiplication and division can
@@ -310,7 +310,7 @@ function QuizInfo() {
                 {quizInfo.id === 4 && (
                   <div className="w-full flex flex-col gap-4 mt-[4rem]">
                     <div className="flex flex-col gap-4">
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -330,7 +330,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -348,6 +348,49 @@ function QuizInfo() {
                             <p>⇒ 8x = 28</p>
                             <p>8x/8 = 28/8</p>
                             <p>⇒ x = 28/8</p>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {quizInfo.id === 5 && (
+                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
+                    <div className="flex flex-col gap-4">
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                        <img
+                          src="/bx-math.svg"
+                          className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
+                        ></img>
+                        {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
+
+                        <div className="flex  flex-col gap-4">
+                          <p className="text-lg font-thin ">
+                            Y = mx+b Where, m determines the slope of that line,
+                            b determines the point at which the line crosses.
+                            <p className="mt-5">5x + 6 = 11 </p>
+                            <p>5x = 11 – 6 </p>
+                            <p>5x =5 </p>
+                            <p>x= 5/5 </p>
+                            <p>x=1</p>
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                        <img
+                          src="/bx-math.svg"
+                          className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
+                        ></img>
+                        {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
+
+                        <div className="flex  flex-col gap-4">
+                          <p className="text-lg font-thin text-justify">
+                          Adding integers is straightforward and involves
+                            combining values to find their sum. When we add
+                            integers, we are essentially "combining" or
+                            "joining" them together.
                           </p>
                         </div>
                       </div>
