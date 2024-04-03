@@ -21,28 +21,28 @@ function About() {
 
       <section className="hero relative flex flex-col gap-8 justify-center  items-center z-10">
         {/* Text */}
-        <div className=" w-2/3">
+        <div className="mt-4 md:mt-0 w-full lg:w-2/3 p-2">
           <h1 className="flex gap-6 text-center justify-center items-center text-4xl lg:text-4xl font-bold text-[#c28f33] mb-4">
             <img
               className="w-[4rem] bg-black rounded-full p-2"
               src="/bxs-graduation.svg"
               alt="Icon"
             />
-            <span>What is BizzMathPro</span>
+            <span className="">What is BizzMathPro</span>
             <img
               className="w-[4rem] bg-black rounded-full p-2"
               src="/bxs-graduation.svg"
               alt="Icon"
             />
           </h1>
-          <p className="bg-black bg-opacity-65 p-2 rounded-lg text-xl font-medium text-white mt-8 text-center">
+          <p className="bg-black border border-[#c28f33] bg-opacity-65 py-8 px-2 rounded-lg text-xl font-medium text-white mt-8 text-center">
             Learn about the brilliant minds behind the linear equations.
             Challenge yourself with our set questions that will spark your
             curiosity and showcase the playful side of mathematics.
           </p>
         </div>
-        <div className=" rounded-lg">
-          <div className="flex gap-6 justify-center items-center text-2xl font-bold text-white mb-[2rem]">
+        <div className=" rounded-lg mt-8">
+          <div className="flex gap-6 justify-center items-center text-2xl font-bold text-white">
             {/* <img
               className="w-[4rem] bg-black rounded-full p-2"
               src="/bxs-graduation.svg"
@@ -61,7 +61,7 @@ function About() {
         <div className="lg:w-1/3 w-full p-4">
           <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-400/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
             <img
-              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain my-[2.4rem]"
+              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
               src="./sv.jpg"
             ></img>
             <p className="text-[#c28f33]  rounded-lg p-2 text-center text-lg font-bold mb-[2rem]">
