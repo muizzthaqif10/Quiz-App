@@ -81,8 +81,7 @@ function QuizInfo() {
           .then((response) => {
             console.log(response);
             navigate(
-              `/quiz/${quizId}?attemptLength=${attemptLength + 1}&attemptId=${
-                response.data.id
+              `/quiz/${quizId}?attemptLength=${attemptLength + 1}&attemptId=${response.data.id
               }`
             ); // Pass the attempt length directly to navigate
           });
@@ -424,6 +423,7 @@ function QuizInfo() {
                             <tr>
                               <th className="text-xl p-2">Attempt</th>
                               <th className="text-xl p-2">Score</th>
+                              <th className="text-xl p-2">Result</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -436,6 +436,14 @@ function QuizInfo() {
                                   <td className="p-2 text-xl bg-white text-black  text-center">
                                     {attempt.score} / {listOfQuestions.length}
                                   </td>
+
+                                )}
+                                {listOfQuestions && (
+                                  <td className="p-2 text-xl bg-white text-black  text-center">
+                                    {((attempt.score / listOfQuestions.length) * 100).toFixed(2)}%
+                                  </td>
+
+
                                 )}
                               </tr>
                             ))}

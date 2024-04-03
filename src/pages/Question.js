@@ -200,13 +200,12 @@ function Question() {
               )}
               <div className=" md:grid md:grid-cols-2 grid grid-cols-1  gap-[1rem] z-10">
                 {listOfQuestions.map((question, questionIndex) => (
-                  
+
                   <div
-                    className={`text-black shadow-lg shadow-black rounded-lg border-2 p-4 transition-all ease-in-out duration-500 bg-white  ${
-                      selectedAnswers.hasOwnProperty(question.id)
+                    className={`text-black shadow-lg shadow-black rounded-lg border-2 p-4 transition-all ease-in-out duration-500 bg-white  ${selectedAnswers.hasOwnProperty(question.id)
                         ? "bg-green-400"
                         : ""
-                    }`}
+                      }`}
                     key={questionIndex}
                   >
                     <div className="font-semibold mb-2 text-lg">
@@ -233,23 +232,21 @@ function Question() {
                               handleCheckboxChange(question.id, choice)
                             }
                             disabled={isAnswerRoute}
-                            className={`form-checkbox h-5 w-5 text-indigo-600 ${
-                              isAnswerRoute
+                            className={`form-checkbox h-5 w-5 text-indigo-600 ${isAnswerRoute
                                 ? choice.isCorrect
                                   ? "bg-green-400"
                                   : "bg-red-400"
                                 : ""
-                            }`}
+                              }`}
                           />
                           <label
                             htmlFor={`choice-${question.id}-${choiceIndex}`}
-                            className={`ml-2 ${
-                              isAnswerRoute
+                            className={`ml-2 ${isAnswerRoute
                                 ? choice.isCorrect
                                   ? "text-green-600"
                                   : "text-red-600"
                                 : ""
-                            }`}
+                              }`}
                           >
                             {choice.text}
                             {isAnswerRoute && (
@@ -302,6 +299,10 @@ function Question() {
                           Your Score : {attemptData[0].score} /{" "}
                           {listOfQuestions.length}
                         </p>
+                        <p className="text-lg font-bold">
+                          Your Score: {((attemptData[0].score / listOfQuestions.length) * 100).toFixed(2)}%
+                        </p>
+
                         <button
                           onClick={handleContinue}
                           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
