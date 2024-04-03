@@ -59,12 +59,12 @@ function About() {
           </div>
         </div>
         <div className="lg:w-1/3 w-full p-4">
-          <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-400/30  items-center bg-[#c28f33] bg-opacity-80 p-4 rounded-lg border-2 border-[#44361a]">
+          <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-400/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
             <img
-              className="rounded-full border border-white w-[9em] h-[9rem] object-fill mb-[2.4rem]"
+              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain my-[2.4rem]"
               src="./sv.jpg"
             ></img>
-            <p className="text-[#ffffff] bg-black rounded-lg p-2 text-center text-lg font-bold mb-[2rem]">
+            <p className="text-[#c28f33]  rounded-lg p-2 text-center text-lg font-bold mb-[2rem]">
               Siti Mahanum Binti Shaik Ismail
             </p>
             
