@@ -440,7 +440,7 @@ function QuizInfo() {
                                 )}
                                 {listOfQuestions && (
                                   <td className="p-2 text-xl bg-white text-black  text-center">
-                                    {((attempt.score / listOfQuestions.length) * 100).toFixed(2)}%
+                                    {Math.round((attempt.score / listOfQuestions.length) * 100)}%
                                   </td>
 
 

@@ -203,8 +203,8 @@ function Question() {
 
                   <div
                     className={`text-black shadow-lg shadow-black rounded-lg border-2 p-4 transition-all ease-in-out duration-500 bg-white  ${selectedAnswers.hasOwnProperty(question.id)
-                        ? "bg-green-400"
-                        : ""
+                      ? "bg-green-400"
+                      : ""
                       }`}
                     key={questionIndex}
                   >
@@ -233,19 +233,19 @@ function Question() {
                             }
                             disabled={isAnswerRoute}
                             className={`form-checkbox h-5 w-5 text-indigo-600 ${isAnswerRoute
-                                ? choice.isCorrect
-                                  ? "bg-green-400"
-                                  : "bg-red-400"
-                                : ""
+                              ? choice.isCorrect
+                                ? "bg-green-400"
+                                : "bg-red-400"
+                              : ""
                               }`}
                           />
                           <label
                             htmlFor={`choice-${question.id}-${choiceIndex}`}
                             className={`ml-2 ${isAnswerRoute
-                                ? choice.isCorrect
-                                  ? "text-green-600"
-                                  : "text-red-600"
-                                : ""
+                              ? choice.isCorrect
+                                ? "text-green-600"
+                                : "text-red-600"
+                              : ""
                               }`}
                           >
                             {choice.text}
@@ -296,11 +296,11 @@ function Question() {
                           src="/bxs-medal.svg"
                         ></img>
                         <p className="text-lg font-bold">
-                          Your Score : {attemptData[0].score} /{" "}
+                           Score : {attemptData[0].score} /{" "}
                           {listOfQuestions.length}
                         </p>
                         <p className="text-lg font-bold">
-                          Your Score: {((attemptData[0].score / listOfQuestions.length) * 100).toFixed(2)}%
+                          Result : {Math.round((attemptData[0].score / listOfQuestions.length) * 100)}%
                         </p>
 
                         <button
