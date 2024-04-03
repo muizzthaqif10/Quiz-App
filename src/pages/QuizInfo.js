@@ -8,6 +8,7 @@ import { FidgetSpinner } from "react-loader-spinner";
 function QuizInfo() {
   const [quizInfo, setQuizInfo] = useState();
   const [showModal, setShowModal] = useState(false);
+  const [listOfQuestions, setListOfQuestions] = useState([]);
   const [attemptByUser, setAttemptByUser] = useState();
   const navigate = useNavigate();
   const [attemptUser, setAttemptUser] = useState();
@@ -48,6 +49,17 @@ function QuizInfo() {
         console.error("Error fetching quiz:", error);
       });
   }, [id]);
+
+  useEffect(() => {
+    axios
+      .get(`https://api-quiz-app.onrender.com/question/${quizId}`)
+      .then((response) => {
+        setListOfQuestions(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [quizId]);
 
   const startAttempt = (quizId) => {
     axios
@@ -125,7 +137,7 @@ function QuizInfo() {
 
         {quizInfo && !loading && (
           <div className="relative z-10">
-            <p className="text-3xl text-white text-center font-bold tracking-wider mb-[2rem]">
+            <p className="text-3xl text-white text-center font-bold tracking-wider mb-[3rem]">
               {quizInfo.title}
             </p>
             <div className="grid w-full lg:grid-cols-2 justify-center items-center text-white gap-[3rem] h-full ">
@@ -135,11 +147,11 @@ function QuizInfo() {
                 {/* <p>{quizInfo.description}</p> */}
 
                 {quizInfo.id === 1 && (
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex flex-col gap-4">
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                  <div className="w-full flex flex-col gap-4 ">
+                    <div className="flex flex-col gap-[2rem]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/calc.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -154,9 +166,9 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/math4.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -170,7 +182,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-start items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex justify-start items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -201,11 +213,11 @@ function QuizInfo() {
                 )}
 
                 {quizInfo.id === 2 && (
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex flex-col gap-4">
-                      <div className="p-2  flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                  <div className="w-full flex flex-col gap-4">
+                    <div className="flex flex-col gap-[2rem]">
+                      <div className="p-4  flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/calc.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -221,7 +233,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -240,9 +252,9 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex justify-start items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex justify-start items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/math4.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -265,11 +277,11 @@ function QuizInfo() {
                 )}
 
                 {quizInfo.id === 3 && (
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex flex-col gap-4">
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                  <div className="w-full flex flex-col gap-4">
+                    <div className="flex flex-col gap-[2rem]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/calc.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -287,7 +299,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -308,11 +320,11 @@ function QuizInfo() {
                 )}
 
                 {quizInfo.id === 4 && (
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex flex-col gap-4">
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                  <div className="w-full flex flex-col gap-4">
+                    <div className="flex flex-col gap-[2rem]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/calc.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -330,7 +342,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -356,11 +368,11 @@ function QuizInfo() {
                 )}
 
                 {quizInfo.id === 5 && (
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex flex-col gap-4">
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                  <div className="w-full flex flex-col gap-4">
+                    <div className="flex flex-col gap-[2rem]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
-                          src="/bx-math.svg"
+                          src="/calc.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
                         ></img>
                         {/* <img src="/bx-medal.svg" className="w-[6rem]"></img> */}
@@ -378,7 +390,7 @@ function QuizInfo() {
                         </div>
                       </div>
 
-                      <div className="p-2 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
+                      <div className="p-4 flex-col lg:flex-row flex justify-center items-center gap-4 bg-black rounded-lg border-2 border-[#c28f33]">
                         <img
                           src="/bx-math.svg"
                           className="w-[5rem] h-[5rem]  p-4 bg-[#c28f33] rounded-full"
@@ -387,7 +399,7 @@ function QuizInfo() {
 
                         <div className="flex  flex-col gap-4">
                           <p className="text-lg font-thin text-justify">
-                          Adding integers is straightforward and involves
+                            Adding integers is straightforward and involves
                             combining values to find their sum. When we add
                             integers, we are essentially "combining" or
                             "joining" them together.
@@ -397,45 +409,55 @@ function QuizInfo() {
                     </div>
                   </div>
                 )}
-
-                {/* <button onClick={() => handleConfirmAttempt(quizInfo.id)}>
-                  Start Quiz 1
-                </button> */}
               </div>
               {authState.status ? (
                 <div className="z-10">
-                  <div className="w-full flex flex-col gap-4 mt-[4rem]">
-                    <div className="flex justify-center items-center gap-4 bg-black bg-opacity-75 rounded-lg border-2 border-[#c28f33] p-4">
-                      <div className="flex flex-col items-center gap-4">
-                        <img src="/bxs-crown.svg" className="w-[4rem]"></img>
-                        <p className="w-full text-2xl font-bold text-center border-b-2 pb-[1rem]">
-                          Dashboard
-                        </p>
-                        {attemptUser &&
-                          attemptUser.map((attempt, index) => (
-                            <div key={index} className=" flex gap-[6rem] ">
-                              <p className="text-xl p-2">Attempt {index + 1}</p>
-                              <p className="text-xl bg-white p-2 text-black rounded">
-                                Score: {attempt.score}
-                              </p>
-                            </div>
-                          ))}
-                        {attemptUser && attemptUser.length >= 3 ? (
-                          <button
-                            onClick={() => navigate(`/answer/${quizId}`)}
-                            className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
-                          >
-                            See Answer
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => handleConfirmAttempt(quizInfo.id)}
-                            className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
-                          >
-                            Start Quiz
-                          </button>
-                        )}
-                      </div>
+                  <div className="flex justify-center items-center gap-4 bg-black bg-opacity-75 rounded-lg border-2 border-[#c28f33] p-4">
+                    <div className="flex w-full flex-col items-center gap-4">
+                      <img src="/bxs-crown.svg" className="w-[4rem]"></img>
+                      <p className="w-full text-2xl font-bold text-center border-[#c28f33] border-b-2 pb-[1rem]">
+                        Dashboard
+                      </p>
+                      {attemptUser && (
+                        <table className="min-w-full">
+                          <thead>
+                            <tr>
+                              <th className="text-xl p-2">Attempt</th>
+                              <th className="text-xl p-2">Score</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {attemptUser.map((attempt, index) => (
+                              <tr key={index} className="border-b border-black">
+                                <td className="p-2 text-xl bg-[#c28f33] text-center">
+                                  {index + 1}
+                                </td>
+                                {listOfQuestions && (
+                                  <td className="p-2 text-xl bg-white text-black  text-center">
+                                    {attempt.score} / {listOfQuestions.length}
+                                  </td>
+                                )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      )}
+
+                      {attemptUser && attemptUser.length >= 3 ? (
+                        <button
+                          onClick={() => navigate(`/answer/${quizId}`)}
+                          className="bg-[#235785] mt-8 border text-white font-bold p-3 rounded"
+                        >
+                          See Answer
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleConfirmAttempt(quizInfo.id)}
+                          className="bg-[#235785] transition hover:border-black hover:translate-x-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
+                        >
+                          Start Quiz
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

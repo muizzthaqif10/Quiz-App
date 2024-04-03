@@ -57,17 +57,17 @@ function About() {
               alt="Icon"
             /> */}
           </div>
-          <div className="flex justify-center w-full items-center gap-8 p-2">
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
-              <img
-                className="rounded-lg w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
-                src="./sv.jpg"
-              ></img>
-              <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
-                Siti Mahanum Binti Shaik  Ismail
-              </p>
-              
-            </div>
+        </div>
+        <div className="lg:w-1/3 w-full p-4">
+          <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-400/30  items-center bg-[#c28f33] bg-opacity-80 p-4 rounded-lg border-2 border-[#44361a]">
+            <img
+              className="rounded-full border border-white w-[9em] h-[9rem] object-fill mb-[2.4rem]"
+              src="./sv.jpg"
+            ></img>
+            <p className="text-[#ffffff] bg-black rounded-lg p-2 text-center text-lg font-bold mb-[2rem]">
+              Siti Mahanum Binti Shaik Ismail
+            </p>
+            
           </div>
         </div>
 
@@ -87,45 +87,51 @@ function About() {
               alt="Icon"
             /> */}
           </div>
-          <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-2">
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
+          <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-4">
+            <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem]  mb-[2.4rem]"
+                className="border rounded-full w-[9rem] h-[9rem]  "
                 src="./user2.jpg"
               ></img>
-              <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
-                Siti Nur Aisyah Binti Mohd Nasir
-              </p>
-              <p className="text-white text-center text-lg font-thin">
-                Life is like MATH if it goes too easy something is wrong.
-              </p>
+              <div>
+                <p className="text-[#c28f33] text-center text-lg font-bold">
+                  Siti Nur Aisyah Binti Mohd Nasir
+                </p>
+                <p className="text-white text-center text-lg font-thin">
+                  Life is like MATH if it goes too easy something is wrong.
+                </p>
+              </div>
             </div>
 
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
+            <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem]  mb-[2.4rem]"
+                className="border rounded-full w-[9rem] h-[9rem]  "
                 src="./user3.jpg"
               ></img>
-              <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
-                Muhammad Haziq Imran Bin Abu Sufian
-              </p>
-              <p className="text-white text-center text-lg font-thin">
-                Maths can be related to our lives. It teaches us to always be
-                careful with the signs.
-              </p>
+              <div>
+                <p className="text-[#c28f33] text-center text-lg font-bold">
+                  Muhammad Haziq Imran Bin Abu Sufian
+                </p>
+                <p className="text-white text-center text-lg font-thin">
+                  Maths can be related to our lives. It teaches us to always be
+                  careful with the signs.
+                </p>
+              </div>
             </div>
 
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 p-4 rounded-lg border-2 border-[#c28f33]">
+            <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[7rem] h-[7rem] mb-[2.4rem]"
+                className="border rounded-full w-[9rem] h-[9rem] "
                 src="./user1.jpg"
               ></img>
-              <p className="text-[#c28f33] text-center text-lg font-bold mb-[2rem]">
-                Nur Nabilah Binti Abdul Rashid
-              </p>
-              <p className="text-white text-center text-lg font-thin">
-                ⁠The only way to learn mathematics is to do mathematics.
-              </p>
+              <div>
+                <p className="text-[#c28f33] text-center text-lg font-bold ">
+                  Nur Nabilah Binti Abdul Rashid
+                </p>
+                <p className="text-white text-center text-lg font-thin">
+                  ⁠The only way to learn mathematics is to do mathematics.
+                </p>
+              </div>
             </div>
           </div>
         </div>
