@@ -275,15 +275,17 @@ function Question() {
               {!isAnswerRoute && !allQuestionsAnswered && (
                 <div className="flex mt-6 justify-end">
                   <button
-                    className="hover:text-white text-black font-semibold hover:bg-blue-900 transition ease-in-out duration-300 bg-blue-400 rounded-lg shadow-md py-2 px-[1rem]"
+                    className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
                     onClick={notComplete}
                     disabled={loading}
                   >
-                    Submit
+                    Submit Answer
                   </button>
                 </div>
               )}
-              {showModal && (
+              
+            </div>
+            {showModal && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
                   <div className="bg-white rounded-lg p-8 max-w-2xl">
                     {attemptData && attemptData.length > 0 ? (
@@ -326,8 +328,7 @@ function Question() {
                     )}
                   </div>
                 </div>
-              )}
-            </div>
+              )} F
           </>
         )}
       </div>
