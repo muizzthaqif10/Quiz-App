@@ -114,6 +114,7 @@ function Login() {
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="Password"
                     className="shadow appearance-none border rounded-3xl w-full py-5 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder=""
                     onChange={(event) => {
@@ -141,13 +142,13 @@ function Login() {
                 <div className="flex items-center justify-center text-center gap-4 font-bold text-xl">
                   <button
                     onClick={login}
-                    className="bg-white text-black p-2 rounded-full w-1/2"
+                    className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
                   >
                     Login
                   </button>
                   <Link
                     to="/register"
-                    className="bg-transparent text-white border-2 border-orange-200 p-2 rounded-full w-1/2"
+                    className="bg-zinc-800 transition bg-opacity-70 text-white hover:border-black hover:translate-y-1 hover:bg-[#c28f33] rounded-full font-bold border-2 border-orange-200 p-2 rounded-full w-1/2"
                   >
                     Register
                   </Link>

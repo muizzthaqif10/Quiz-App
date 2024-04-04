@@ -454,14 +454,14 @@ function QuizInfo() {
                       {attemptUser && attemptUser.length >= 3 ? (
                         <button
                           onClick={() => navigate(`/answer/${quizId}`)}
-                          className="bg-[#235785] mt-8 border text-white font-bold p-3 rounded"
+                          className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
                         >
                           See Answer
                         </button>
                       ) : (
                         <button
                           onClick={() => handleConfirmAttempt(quizInfo.id)}
-                          className="bg-[#235785] transition hover:border-black hover:translate-x-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
+                          className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
                         >
                           Start Quiz
                         </button>
@@ -481,7 +481,7 @@ function QuizInfo() {
 
                         <button
                           onClick={() => navigate("/login")}
-                          className="bg-[#2174ea] text-white font-bold my-[2rem] p-3 rounded"
+                          className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] mt-8 border text-white font-bold p-3 rounded"
                         >
                           Please Login first
                         </button>

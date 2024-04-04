@@ -115,6 +115,7 @@ function Register() {
                       type="password"
                       name="password"
                       id="password"
+                      placeholder="Password"
                       className="shadow appearance-none border rounded-3xl w-full py-5 px-3 text-black mb-3 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder=""
                       onChange={(event) => {
@@ -142,7 +143,7 @@ function Register() {
                   <div className="flex items-center justify-center gap-4 font-bold text-xl">
                     <button
                       onClick={register}
-                      className="bg-white text-black p-2 rounded-full w-1/2"
+                      className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
                     >
                       Register
                     </button>

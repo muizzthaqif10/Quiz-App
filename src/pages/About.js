@@ -67,7 +67,7 @@ function About() {
             <p className="text-[#c28f33]  rounded-lg p-2 text-center text-lg font-bold mb-[2rem]">
               Siti Mahanum Binti Shaik Ismail
             </p>
-            
+
           </div>
         </div>
 
@@ -90,7 +90,7 @@ function About() {
           <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-4">
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[9rem] h-[9rem]  "
+                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
                 src="./user2.jpg"
               ></img>
               <div>
@@ -105,7 +105,7 @@ function About() {
 
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
               <img
-                className="border rounded-full w-[9rem] h-[9rem]  "
+                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
                 src="./user3.jpg"
               ></img>
               <div>
@@ -120,10 +120,10 @@ function About() {
             </div>
 
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
-              <img
-                className="border rounded-full w-[9rem] h-[9rem] "
-                src="./user1.jpg"
-              ></img>
+            <img
+              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
+              src="./user1.jpg"
+            ></img>
               <div>
                 <p className="text-[#c28f33] text-center text-lg font-bold ">
                   Nur Nabilah Binti Abdul Rashid
