@@ -88,12 +88,12 @@ function About() {
             /> */}
           </div>
           <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-4">
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4 rounded-lg border-2 border-[#c28f33]">
+            <div className="w-full h-full flex flex-col  shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4 rounded-lg border-2 border-[#c28f33]">
               <img
                 className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
                 src="./user2.jpg"
               ></img>
-              <div>
+              <div className="flex flex-col gap-2 justify-center">
                 <p className="text-[#c28f33] text-center text-lg font-bold">
                   Siti Nur Aisyah Binti Mohd Nasir
                 </p>
@@ -103,12 +103,12 @@ function About() {
               </div>
             </div>
 
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
+            <div className="w-full h-full flex flex-col  shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
               <img
                 className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
                 src="./user3.jpg"
               ></img>
-              <div>
+              <div className="flex flex-col gap-2 justify-center">
                 <p className="text-[#c28f33] text-center text-lg font-bold">
                   Muhammad Haziq Imran Bin Abu Sufian
                 </p>
@@ -119,12 +119,12 @@ function About() {
               </div>
             </div>
 
-            <div className="w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
+            <div className="w-full h-full flex flex-col  shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
             <img
               className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
               src="./user1.jpg"
             ></img>
-              <div>
+              <div className="flex flex-col gap-2 justify-center">
                 <p className="text-[#c28f33] text-center text-lg font-bold ">
                   Nur Nabilah Binti Abdul Rashid
                 </p>
