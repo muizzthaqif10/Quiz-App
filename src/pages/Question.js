@@ -287,7 +287,7 @@ function Question() {
             </div>
             {showModal && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
-                  <div className="bg-white rounded-lg p-8 max-w-2xl">
+                  <div className="bg-white rounded-lg p-8 w-3xl">
                     {attemptData && attemptData.length > 0 ? (
                       <div className="flex flex-col justify-center items-center gap-4">
                         <h2 className="text-lg font-semibold mb-4">
