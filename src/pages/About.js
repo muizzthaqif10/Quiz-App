@@ -90,7 +90,7 @@ function About() {
           <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-8 p-4">
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4 rounded-lg border-2 border-[#c28f33]">
               <img
-                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
+                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain"
                 src="./user2.jpg"
               ></img>
               <div>
@@ -105,7 +105,7 @@ function About() {
 
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
               <img
-                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
+                className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain "
                 src="./user3.jpg"
               ></img>
               <div>
@@ -121,7 +121,7 @@ function About() {
 
             <div className="gap-6 w-full h-full flex flex-col justify-center shadow-lg shadow-yellow-100/30  items-center bg-gray-900 bg-opacity-80 py-8 px-4  rounded-lg border-2 border-[#c28f33]">
             <img
-              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain mb-[2.4rem]"
+              className="rounded-full border bg-[#c28f33] border-black w-[12rem] h-[12rem] object-contain "
               src="./user1.jpg"
             ></img>
               <div>

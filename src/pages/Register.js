@@ -143,7 +143,7 @@ function Register() {
                   <div className="flex items-center justify-center gap-4 font-bold text-xl">
                     <button
                       onClick={register}
-                      className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
+                      className="bg-[#235785] transition hover:border-black  hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
                     >
                       Register
                     </button>

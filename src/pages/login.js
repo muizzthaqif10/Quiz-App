@@ -142,13 +142,13 @@ function Login() {
                 <div className="flex items-center justify-center text-center gap-4 font-bold text-xl">
                   <button
                     onClick={login}
-                    className="bg-[#235785] transition hover:border-black hover:translate-y-1 hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
+                    className="bg-[#235785] transition hover:border-black hover:bg-[#c28f33] border text-white font-bold p-2 rounded-full w-1/2"
                   >
                     Login
                   </button>
                   <Link
                     to="/register"
-                    className="bg-zinc-800 transition bg-opacity-70 text-white hover:border-black hover:translate-y-1 hover:bg-[#c28f33] rounded-full font-bold border-2 border-orange-200 p-2 rounded-full w-1/2"
+                    className="bg-zinc-800 transition bg-opacity-70 text-white hover:border-black  hover:bg-[#c28f33] rounded-full font-bold border-2 border-orange-200 p-2 rounded-full w-1/2"
                   >
                     Register
                   </Link>
