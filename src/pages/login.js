@@ -116,7 +116,6 @@ function Login() {
                     id="password"
                     placeholder="Password"
                     className="shadow appearance-none border rounded-3xl w-full py-5 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder=""
                     onChange={(event) => {
                       setPassword(event.target.value);
                     }}
